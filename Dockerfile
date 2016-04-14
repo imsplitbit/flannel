@@ -1,1 +1,5 @@
-FROM golang:1.4.1-onbuild
+FROM scratch
+MAINTAINER Daniel Salinas <imsplitbit@gmail.com>
+COPY bin/flanneld /flanneld
+VOLUME ["/etc/kubernetes", "/etc/ssl/certs"]
+ENTRYPOINT ["/flanneld"]

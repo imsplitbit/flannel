@@ -1,0 +1,4 @@
+#!/bin/bash -e
+
+docker run -v `pwd`:/opt/flannel -i -t google/golang /bin/bash -c "cd /opt/flannel && ./build"
+docker build -t quay.io/imsplitbit/flannel:latest .
